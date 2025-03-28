@@ -1,9 +1,11 @@
 const styleUrl = "mapbox://styles/nk-studio/cm8rqp5e900cx01s77ju3fbhg/draft";
 mapboxgl.accessToken = TOKEN;
+BIRDS_FLYWAYS_LAYER_ID = "BIRDS_FLYWAYS";
+
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: styleUrl, // style URL
-    center: [-74.5, 40], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+    center: [30, 30], // starting position [lng, lat]. Note that lat must be set between -90 and 90
     zoom: 9 // starting zoom
 });
 GUF_LAYER_NAME = 'GUF28_DLR_v1_Mosaic';
@@ -21,7 +23,11 @@ map.on('load', () => {
         type: 'raster',
         source: 'wms-source',
         paint: {
-            "raster-opacity": 0.4
-        }
-    });
+            "raster-opacity": 0.8,
+            'raster-saturation': 0.8,
+            'raster-fade-duration': 500,
+        },
+    },
+        BIRDS_FLYWAYS_LAYER_ID  // insert before this layer
+        );
 });
