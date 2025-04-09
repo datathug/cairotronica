@@ -1,6 +1,7 @@
 const styleUrl = "mapbox://styles/nk-studio/cm8rqp5e900cx01s77ju3fbhg/draft";
 mapboxgl.accessToken = TOKEN;
-BIRDS_FLYWAYS_LAYER_ID = "BIRDS_FLYWAYS - BASE";
+const BIRDS_FLYWAYS_LAYER_ID = "BIRDS_FLYWAYS - BASE";
+const FALLBACK_SPEED = 0.08;
 
 const map = new mapboxgl.Map({
     container: 'map',
@@ -81,29 +82,29 @@ const animationFlowViews = [
     // zoom, lon, lat, speed, waitUntilNext, onComplete
     [
         3.07, 24.7, 30.33,
-        0.12, 0, null
+        FALLBACK_SPEED, 0, null
     ],
     [
         5.4, 26.667, 31.295,
-        0.12, 0, null
+        FALLBACK_SPEED, 0, null
     ],
     [
         6.12, 28.752, 30.16,
-        0.12, 0, null
+        FALLBACK_SPEED, 0, null
     ],
     [
         7.79, 30.037, 30.666,
-        0.12, 0, () => {
+        FALLBACK_SPEED, 0, () => {
             console.log("Callback completed!")
         }
     ],
     [
         8.84, 30.2206, 29.9583,
-        0.12, 0, null
+        FALLBACK_SPEED, 0, null
     ],
     [
-        13.08, 30.43664, 29.53953,
-        0.12, 0, null
+        13.08, 30.3481, 29.6008,
+        FALLBACK_SPEED, 0, null
     ],
 ]
 
