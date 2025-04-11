@@ -1,7 +1,7 @@
 const styleUrl = "mapbox://styles/nk-studio/cm8rqp5e900cx01s77ju3fbhg/draft";
 mapboxgl.accessToken = TOKEN;
 const BIRDS_FLYWAYS_LAYER_ID = "BIRDS_FLYWAYS - BASE";
-const FALLBACK_SPEED = 0.08;
+const FALLBACK_SPEED = 0.04;
 
 const map = new mapboxgl.Map({
     container: 'map',
